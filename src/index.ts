@@ -1,4 +1,3 @@
-/* @flow */
 import { FileSystem } from 'expo';
 
 import {

@@ -1,6 +1,6 @@
 {
   "name": "expo-fsstorage",
-  "version": "1.0.7",
+  "version": "1.0.0-beta.1",
   "description": "Storage engine for Expo's FileSystem",
   "author": "Giau Tran Minh <giau.tmg@gmail.com>",
   "contributors": [],
