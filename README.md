@@ -1,38 +1,33 @@
-# Redux Persist FS Storage
+# Expo FS Storage
 
-[Redux Persist](https://github.com/rt2zz/redux-persist/) storage engine for React Native file system
-
-Inspired by [redux-persist-filesystem-storage](https://github.com/robwalkerco/redux-persist-filesystem-storage), this module works as adapter between [react-native-fs](https://github.com/itinance/react-native-fs) and [redux-persist](https://github.com/rt2zz/redux-persist/). 
+[Expo Persist](https://github.com/rt2zz/redux-persist/) storage engine for React Native file system
 
 ### Install
 
 ```
-yarn add react-native-fs redux-persist-fs-storage
+yarn add expo-fsstorage
 ```
-
-This will install `react-native-fs` as dependency. So make sure to link it natively:
-```
-react-native link react-native-fs
-```
-
-See `react-native-fs`'s [documentation](https://github.com/itinance/react-native-fs) for details.
 
 ### Usage
 
 ```js
 import { persistStore } from 'redux-persist'
-import FSStorage from 'redux-persist-fs-storage';
+import { FSStorage } from 'expo-fsstorage';
 
-const persistor = persistStore(store, {storage: FSStorage()});
+const persistor = persistStore(store, {
+  storage: FSStorage(),
+});
 ```
 
-The default storage location is a folder called `reduxPersist` in the document directory for your app on the device. You can specify folder for persistor:
+The default storage location is a folder called `expo-fsstorage` in the document directory for your app on the device. You can specify folder for persistor:
 
 ```js
 import { persistStore } from 'redux-persist'
-import FSStorage, { CacheDir } from 'redux-persist-fs-storage';
+import { FSStorage, CacheDir } from 'expo-fsstorage';
 
-const cachePersistor = persistStore(store, {storage: FSStorage(CacheDir, 'myApp')});
+const cachePersistor = persistStore(store, {
+  storage: FSStorage(CacheDir, 'myApp'),
+});
 ```
 
 This will create `myApp` folder in cache storage for iOS and Android devices. You may create multiple persistors on different directories.
